@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#edf1f6"><meta name="description" content="VelociDrone günlük simülatör antrenmanı ve pist takip defteri">
+  <title>FPV Çalışma Defteri</title>
+  <link rel="stylesheet" href="journal.css">
+  <script src="data.js" defer></script><script src="app.js" defer></script><script src="daily.js" defer></script><script src="equipment-data.js" defer></script><script src="equipment.js" defer></script><script src="dashboard.js" defer></script><script src="journal.js" defer></script>
+</head>
+<body>
+<!--
+THESIS: A readable learning workspace makes the selected FPV lesson and its next action obvious.
+OWN-WORLD: Adult learning interface. Slate navigation text on white, cool neutral canvas,
+white lesson sheet, blue active work, green completion and amber pending work. Self-hosted Lexend.
+STORY: Read the objective, prepare the track, follow the real practice recipe, save the result.
+FIRST VIEWPORT: Persistent navigation, compact day controls, one lesson with three learning
+steps, and a quieter curriculum with truthful progress. Supporting tools are disclosures.
+FORM: Seed d1a4d938; user-pinned light, calm, professional learning panel. Clear surface
+contrast and status text reinforce color. Functional data and storage contract are preserved.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
+review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<a href="#main" class="skip">İçeriğe geç</a>
+<aside class="rail">
+  <a href="#today" class="brand" aria-label="FPV Çalışma Defteri ana sayfa"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 12h10l5 8 5-8h10M5 28h10l5-8 5 8h10"/><circle cx="5" cy="12" r="3"/><circle cx="35" cy="12" r="3"/><circle cx="5" cy="28" r="3"/><circle cx="35" cy="28" r="3"/></svg><span>FPV<span>Öğrenme alanı</span></span></a>
+  <nav aria-label="Ana gezinme">
+    <a href="#today" data-page="today"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 11h16m-11 5 2 2 4-4"/></svg> Bugünün dersi</a>
+    <a href="#calendar" data-page="calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 11h16m-11 4h2m3 0h2m-7 3h2"/></svg> Program</a>
+    <a href="#tracks" data-page="tracks"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12m8-12v12M4 12h16"/></svg> Pistler</a>
+    <a href="#dashboard" data-page="dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16M7 15l4-5 4 2 5-7"/></svg> Gelişim</a>
+    <a href="#progress" data-page="progress"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h12v16H8zM4 8h7M4 12h7M4 16h7m3-8h3m-3 4h3"/></svg> Kayıtlar</a>
+    <a href="#guide" data-page="guide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zm0 0v14"/></svg> Rehber</a>
+  </nav>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span>VelociDrone <span class="topbar-divider">/</span> Çalışma defteri</span><span id="header-progress"></span></header>
+  <div id="storage-warning" role="alert" hidden></div>
+  <main id="main" tabindex="-1"></main>
+  <div class="rail-bottom"><p>VelociDrone · Yerel çalışma alanı</p><button id="backup" class="text-button">Yedeği indir</button><label class="text-button import">Yedeği yükle<input id="import" type="file" accept=".json,application/json"></label><small id="save-status">Kayıtlar bu tarayıcıda saklanır.</small></div>
+
+  <footer>Resmî katalog görüntüsü · 9 Kasım 2026 · 50 sahne / 2.090 pist kaydı <a href="#guide">Kapsam ve kaynaklar</a></footer>
+</div>
+<dialog id="record-dialog" aria-labelledby="record-title"><form id="record-form"><div class="dialog-head"><h2 id="record-title">Uçuş sonucunu kaydet</h2><button type="button" class="icon" id="close-dialog" aria-label="Pencereyi kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p id="record-track"></p><div id="record-fields"></div><p id="record-feedback" role="status"></p><div class="dialog-actions"><button type="submit" class="primary">Kaydet</button></div></form></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>
+
+
